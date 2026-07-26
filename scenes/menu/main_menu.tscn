@@ -1,0 +1,203 @@
+[gd_scene format=3 uid="uid://cm8mhbuibu01y"]
+
+[ext_resource type="Script" uid="uid://b0y1t8lr1al14" path="res://scenes/menu/main_menu.gd" id="1_41tvm"]
+[ext_resource type="Texture2D" uid="uid://nk2bh0bcwj7v" path="res://assets/campfire_layers/00_background.png" id="1_d4hu8"]
+[ext_resource type="Texture2D" uid="uid://dw3man8hl7mfj" path="res://assets/campfire_layers/01_sky.png" id="2_p1nwe"]
+[ext_resource type="Texture2D" uid="uid://b6sl8hvx0eb73" path="res://assets/campfire_layers/02_sky.png" id="3_prbor"]
+[ext_resource type="Texture2D" uid="uid://b7bbkstak5khh" path="res://assets/campfire_layers/03_sky.png" id="4_27h4x"]
+[ext_resource type="Texture2D" uid="uid://ce3wpud1fj08o" path="res://assets/campfire_layers/05_mountains.png" id="5_gdhp0"]
+[ext_resource type="Texture2D" uid="uid://djbqnk32nwb8y" path="res://assets/campfire_layers/06_mountain.png" id="6_pstia"]
+[ext_resource type="Texture2D" uid="uid://cm4xdu7qxql3f" path="res://assets/campfire_layers/07_hills.png" id="7_41tvm"]
+[ext_resource type="Texture2D" uid="uid://vr582hg2m43j" path="res://assets/campfire_layers/08_mist.png" id="8_vxdmp"]
+[ext_resource type="Texture2D" uid="uid://bfx5j8gep1hbh" path="res://assets/campfire_layers/09_forest.png" id="9_3h20m"]
+[ext_resource type="Texture2D" uid="uid://djim276ow1xrj" path="res://assets/campfire_layers/10_forest.png" id="10_uaj4g"]
+[ext_resource type="Texture2D" uid="uid://cvm43h8u7bd3w" path="res://assets/campfire_layers/11_grass.png" id="11_si58d"]
+[ext_resource type="Texture2D" uid="uid://4080reha8h6r" path="res://assets/campfire_layers/12_bonfire.png" id="12_anexq"]
+[ext_resource type="Script" uid="uid://t5bo034n4x0m" path="res://scenes/camp/camp_camera.gd" id="13_p1nwe"]
+[ext_resource type="FontFile" uid="uid://dsnixfcm078au" path="res://assets/fonts/beholden-book-font/BeholdenBook-Bold.ttf" id="14_prbor"]
+[ext_resource type="AudioStream" uid="uid://c8rwqxyejcqck" path="res://assets/ambient/real_fire_crackling_clean.mp3" id="15_gdhp0"]
+[ext_resource type="AudioStream" uid="uid://cq74w7jdumvb4" path="res://music/The_Right_Kind_Of_Heat_Hates_Me.ogg" id="17_pstia"]
+
+[node name="MainMenu" type="Node2D" unique_id=681418893 node_paths=PackedStringArray("start_button", "quit_button", "blue_screen", "fire_crackling_sfx", "music")]
+script = ExtResource("1_41tvm")
+start_button = NodePath("Buttons/VBoxContainer/Start")
+quit_button = NodePath("Buttons/VBoxContainer/Quit")
+blue_screen = NodePath("BlueScreen")
+fire_crackling_sfx = NodePath("FireCrackling")
+music = NodePath("Music")
+
+[node name="Layers" type="Node2D" parent="." unique_id=1398648460]
+modulate = Color(1, 0.471, 0.275, 1)
+position = Vector2(-968.00006, -1272)
+scale = Vector2(3, 3)
+
+[node name="Background" type="Parallax2D" parent="Layers" unique_id=720607716]
+
+[node name="Sprite2D" type="Sprite2D" parent="Layers/Background" unique_id=691697987]
+modulate = Color(0, 0, 1.3566377, 1)
+position = Vector2(576, 322)
+scale = Vector2(1.6, 1.8111111)
+texture = ExtResource("1_d4hu8")
+
+[node name="Sky1" type="Parallax2D" parent="Layers" unique_id=1865357431]
+
+[node name="Sprite2D" type="Sprite2D" parent="Layers/Sky1" unique_id=1595258109]
+modulate = Color(0, 0, 1, 1)
+position = Vector2(576, 322)
+scale = Vector2(1.6, 1.8111111)
+texture = ExtResource("2_p1nwe")
+
+[node name="Sky2" type="Parallax2D" parent="Layers" unique_id=331316658]
+
+[node name="Sprite2D" type="Sprite2D" parent="Layers/Sky2" unique_id=448124926]
+modulate = Color(0, 0, 0.735357, 1)
+position = Vector2(576, 322)
+scale = Vector2(1.6, 1.8111112)
+texture = ExtResource("3_prbor")
+
+[node name="Sky3" type="Parallax2D" parent="Layers" unique_id=537350838]
+
+[node name="Sprite2D" type="Sprite2D" parent="Layers/Sky3" unique_id=1508661674]
+modulate = Color(0, 0, 2.454227, 1)
+position = Vector2(576, 322)
+scale = Vector2(1.6, 1.8111111)
+texture = ExtResource("4_27h4x")
+
+[node name="Mountains1" type="Parallax2D" parent="Layers" unique_id=810090180]
+
+[node name="Sprite2D" type="Sprite2D" parent="Layers/Mountains1" unique_id=1310830126]
+modulate = Color(0, 0, 2.454227, 1)
+position = Vector2(576, 322)
+scale = Vector2(1.6, 1.8111111)
+texture = ExtResource("5_gdhp0")
+
+[node name="Mountains2" type="Parallax2D" parent="Layers" unique_id=2023295013]
+
+[node name="Sprite2D" type="Sprite2D" parent="Layers/Mountains2" unique_id=621722691]
+modulate = Color(0, 0, 1.8247963, 1)
+position = Vector2(575.99994, 322)
+scale = Vector2(1.5999999, 1.8111111)
+texture = ExtResource("6_pstia")
+
+[node name="Hills" type="Parallax2D" parent="Layers" unique_id=1737385623]
+
+[node name="Sprite2D" type="Sprite2D" parent="Layers/Hills" unique_id=2072216695]
+modulate = Color(0, 0, 1.353256, 1)
+position = Vector2(576, 322)
+scale = Vector2(1.6, 1.8111111)
+texture = ExtResource("7_41tvm")
+
+[node name="Mist" type="Parallax2D" parent="Layers" unique_id=1685925225]
+
+[node name="Sprite2D" type="Sprite2D" parent="Layers/Mist" unique_id=897241091]
+modulate = Color(0, 0, 0.38857287, 1)
+position = Vector2(576, 322)
+scale = Vector2(1.6, 1.8111111)
+texture = ExtResource("8_vxdmp")
+
+[node name="Forest1" type="Parallax2D" parent="Layers" unique_id=1409194278]
+
+[node name="Sprite2D" type="Sprite2D" parent="Layers/Forest1" unique_id=29799213]
+modulate = Color(0, 0, 1.353256, 1)
+position = Vector2(576, 322)
+scale = Vector2(1.6, 1.8111111)
+texture = ExtResource("9_3h20m")
+
+[node name="Forest2" type="Parallax2D" parent="Layers" unique_id=1197874940]
+
+[node name="Sprite2D" type="Sprite2D" parent="Layers/Forest2" unique_id=2107462501]
+modulate = Color(0, 0, 1.353256, 1)
+position = Vector2(576, 322)
+scale = Vector2(1.6, 1.8111111)
+texture = ExtResource("10_uaj4g")
+
+[node name="Grass" type="Parallax2D" parent="Layers" unique_id=735297167]
+
+[node name="Sprite2D" type="Sprite2D" parent="Layers/Grass" unique_id=1881322781]
+position = Vector2(576, 322)
+scale = Vector2(1.6, 1.8111111)
+texture = ExtResource("11_si58d")
+
+[node name="Campfire" type="Parallax2D" parent="Layers" unique_id=395918030]
+
+[node name="Sprite2D" type="Sprite2D" parent="Layers/Campfire" unique_id=1009050134]
+position = Vector2(576, 322)
+scale = Vector2(1.6, 1.8111111)
+texture = ExtResource("12_anexq")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1683017793]
+position = Vector2(576, 328)
+offset = Vector2(3.765, 0)
+zoom = Vector2(1.1, 1.1)
+script = ExtResource("13_p1nwe")
+
+[node name="Title" type="CanvasLayer" parent="." unique_id=1825422926]
+scale = Vector2(0.14, 0.14)
+transform = Transform2D(0.14, 0, 0, 0.14, 0, 0)
+
+[node name="Label" type="Label" parent="Title" unique_id=890732475]
+offset_left = 628.5714
+offset_top = 628.5714
+offset_right = 3727.5713
+offset_bottom = 1096.5714
+theme_override_colors/font_color = Color(0.91764706, 0.18039216, 0, 1)
+theme_override_fonts/font = ExtResource("14_prbor")
+theme_override_font_sizes/font_size = 467
+text = "NOT ENOUGH FIRE"
+
+[node name="FireCrackling" type="AudioStreamPlayer" parent="." unique_id=1731004090]
+stream = ExtResource("15_gdhp0")
+volume_db = -10.299
+autoplay = true
+bus = &"SFX"
+
+[node name="Buttons" type="CanvasLayer" parent="." unique_id=160822799]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Buttons" unique_id=1390021355]
+offset_left = 128.0
+offset_top = 328.0
+offset_right = 790.0
+offset_bottom = 1105.0
+scale = Vector2(0.15, 0.15)
+theme_override_constants/separation = 159
+
+[node name="Start" type="Button" parent="Buttons/VBoxContainer" unique_id=337080220]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_pressed_color = Color(0.49019608, 0.0627451, 0.007843138, 1)
+theme_override_colors/font_hover_color = Color(0.9137255, 0.1764706, 0, 1)
+theme_override_fonts/font = ExtResource("14_prbor")
+theme_override_font_sizes/font_size = 300
+text = "Start"
+flat = true
+alignment = 0
+
+[node name="Quit" type="Button" parent="Buttons/VBoxContainer" unique_id=1942382715]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_pressed_color = Color(0.49019608, 0.0627451, 0.007843138, 1)
+theme_override_colors/font_hover_color = Color(0.9137255, 0.1764706, 0, 1)
+theme_override_fonts/font = ExtResource("14_prbor")
+theme_override_font_sizes/font_size = 300
+text = "Quit"
+flat = true
+alignment = 0
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1946642323]
+stream = ExtResource("17_pstia")
+volume_db = -2.0
+autoplay = true
+
+[node name="BlueScreen" type="CanvasLayer" parent="." unique_id=1351716899]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="BlueScreen" unique_id=2069431437]
+top_level = true
+visibility_layer = 2
+z_index = 100
+offset_right = 1160.0
+offset_bottom = 648.0
+color = Color(0, 0, 0.23529412, 1)
+
+[connection signal="pressed" from="Buttons/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

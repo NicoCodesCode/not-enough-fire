@@ -1,0 +1,190 @@
+[gd_scene format=3 uid="uid://b6swmuh7meg2i"]
+
+[ext_resource type="Script" uid="uid://fapx5tis5yar" path="res://scenes/camp/camp.gd" id="1_0l17k"]
+[ext_resource type="Texture2D" uid="uid://nk2bh0bcwj7v" path="res://assets/campfire_layers/00_background.png" id="1_mfytg"]
+[ext_resource type="Texture2D" uid="uid://dw3man8hl7mfj" path="res://assets/campfire_layers/01_sky.png" id="2_iffde"]
+[ext_resource type="Texture2D" uid="uid://b6sl8hvx0eb73" path="res://assets/campfire_layers/02_sky.png" id="3_q1o60"]
+[ext_resource type="Texture2D" uid="uid://b7bbkstak5khh" path="res://assets/campfire_layers/03_sky.png" id="4_gucow"]
+[ext_resource type="Texture2D" uid="uid://ce3wpud1fj08o" path="res://assets/campfire_layers/05_mountains.png" id="5_jywr0"]
+[ext_resource type="Texture2D" uid="uid://djbqnk32nwb8y" path="res://assets/campfire_layers/06_mountain.png" id="6_unr2w"]
+[ext_resource type="Texture2D" uid="uid://cm4xdu7qxql3f" path="res://assets/campfire_layers/07_hills.png" id="7_nerqb"]
+[ext_resource type="Texture2D" uid="uid://vr582hg2m43j" path="res://assets/campfire_layers/08_mist.png" id="8_3q0xc"]
+[ext_resource type="Texture2D" uid="uid://bfx5j8gep1hbh" path="res://assets/campfire_layers/09_forest.png" id="9_ru6ge"]
+[ext_resource type="Texture2D" uid="uid://djim276ow1xrj" path="res://assets/campfire_layers/10_forest.png" id="10_2en44"]
+[ext_resource type="Texture2D" uid="uid://cvm43h8u7bd3w" path="res://assets/campfire_layers/11_grass.png" id="11_xfuta"]
+[ext_resource type="Texture2D" uid="uid://4080reha8h6r" path="res://assets/campfire_layers/12_bonfire.png" id="12_dx0dm"]
+[ext_resource type="Script" uid="uid://t5bo034n4x0m" path="res://scenes/camp/camp_camera.gd" id="13_q1o60"]
+[ext_resource type="PackedScene" uid="uid://bbh0pdt2jo34l" path="res://scenes/ui/textbox.tscn" id="14_hnujd"]
+[ext_resource type="PackedScene" uid="uid://0ed4nch85phc" path="res://scenes/ui/item_counter.tscn" id="16_i3lb4"]
+[ext_resource type="AudioStream" uid="uid://ct5up3pnnt6a4" path="res://assets/ambient/Blackout Hallucination.wav" id="17_nkis6"]
+[ext_resource type="PackedScene" uid="uid://df7ms4c8b48t6" path="res://scenes/ui/cold_meter.tscn" id="17_sjxtf"]
+[ext_resource type="AudioStream" uid="uid://cq6ywcb6f6jxp" path="res://assets/sfx/flames.mp3" id="18_1e11b"]
+[ext_resource type="FontFile" uid="uid://dsnixfcm078au" path="res://assets/fonts/beholden-book-font/BeholdenBook-Bold.ttf" id="18_mvgab"]
+[ext_resource type="AudioStream" uid="uid://c8rwqxyejcqck" path="res://assets/ambient/real_fire_crackling_clean.mp3" id="19_qd6ls"]
+[ext_resource type="AudioStream" uid="uid://cj7d6hst7h3xm" path="res://assets/sfx/Minimalist5.wav" id="21_qd6ls"]
+
+[node name="Camp" type="Node2D" unique_id=1829723091 node_paths=PackedStringArray("background", "textbox", "item_counter", "cold_meter", "hint", "flames_sfx", "cool_down_sfx")]
+process_mode = 1
+script = ExtResource("1_0l17k")
+background = NodePath("Layers")
+textbox = NodePath("Textbox")
+item_counter = NodePath("ItemCounter")
+cold_meter = NodePath("ColdMeter")
+hint = NodePath("Hint")
+flames_sfx = NodePath("Flames")
+cool_down_sfx = NodePath("CoolDown")
+
+[node name="Layers" type="Node2D" parent="." unique_id=730667801]
+modulate = Color(1, 0.471, 0.275, 1)
+
+[node name="Background" type="Parallax2D" parent="Layers" unique_id=1910442719]
+
+[node name="Sprite2D" type="Sprite2D" parent="Layers/Background" unique_id=880216350]
+modulate = Color(0, 0, 1.3566377, 1)
+position = Vector2(576, 322)
+scale = Vector2(1.6, 1.8111111)
+texture = ExtResource("1_mfytg")
+
+[node name="Sky1" type="Parallax2D" parent="Layers" unique_id=1983307552]
+
+[node name="Sprite2D" type="Sprite2D" parent="Layers/Sky1" unique_id=349056616]
+modulate = Color(0, 0, 1, 1)
+position = Vector2(576, 322)
+scale = Vector2(1.6, 1.8111111)
+texture = ExtResource("2_iffde")
+
+[node name="Sky2" type="Parallax2D" parent="Layers" unique_id=1761645519]
+
+[node name="Sprite2D" type="Sprite2D" parent="Layers/Sky2" unique_id=587777262]
+modulate = Color(0, 0, 0.735357, 1)
+position = Vector2(576, 322)
+scale = Vector2(1.6, 1.8111112)
+texture = ExtResource("3_q1o60")
+
+[node name="Sky3" type="Parallax2D" parent="Layers" unique_id=303179362]
+
+[node name="Sprite2D" type="Sprite2D" parent="Layers/Sky3" unique_id=1198784389]
+modulate = Color(0, 0, 2.454227, 1)
+position = Vector2(576, 322)
+scale = Vector2(1.6, 1.8111111)
+texture = ExtResource("4_gucow")
+
+[node name="Mountains1" type="Parallax2D" parent="Layers" unique_id=1929635002]
+
+[node name="Sprite2D" type="Sprite2D" parent="Layers/Mountains1" unique_id=2021245307]
+modulate = Color(0, 0, 2.454227, 1)
+position = Vector2(576, 322)
+scale = Vector2(1.6, 1.8111111)
+texture = ExtResource("5_jywr0")
+
+[node name="Mountains2" type="Parallax2D" parent="Layers" unique_id=64623425]
+
+[node name="Sprite2D" type="Sprite2D" parent="Layers/Mountains2" unique_id=259483637]
+modulate = Color(0, 0, 1.8247963, 1)
+position = Vector2(575.99994, 322)
+scale = Vector2(1.5999999, 1.8111111)
+texture = ExtResource("6_unr2w")
+
+[node name="Hills" type="Parallax2D" parent="Layers" unique_id=1179690834]
+
+[node name="Sprite2D" type="Sprite2D" parent="Layers/Hills" unique_id=2063969124]
+modulate = Color(0, 0, 1.353256, 1)
+position = Vector2(576, 322)
+scale = Vector2(1.6, 1.8111111)
+texture = ExtResource("7_nerqb")
+
+[node name="Mist" type="Parallax2D" parent="Layers" unique_id=942818049]
+
+[node name="Sprite2D" type="Sprite2D" parent="Layers/Mist" unique_id=1701748950]
+modulate = Color(0, 0, 0.38857287, 1)
+position = Vector2(576, 322)
+scale = Vector2(1.6, 1.8111111)
+texture = ExtResource("8_3q0xc")
+
+[node name="Forest1" type="Parallax2D" parent="Layers" unique_id=1240659343]
+
+[node name="Sprite2D" type="Sprite2D" parent="Layers/Forest1" unique_id=932253811]
+modulate = Color(0, 0, 1.353256, 1)
+position = Vector2(576, 322)
+scale = Vector2(1.6, 1.8111111)
+texture = ExtResource("9_ru6ge")
+
+[node name="Forest2" type="Parallax2D" parent="Layers" unique_id=1325399689]
+
+[node name="Sprite2D" type="Sprite2D" parent="Layers/Forest2" unique_id=738437530]
+modulate = Color(0, 0, 1.353256, 1)
+position = Vector2(576, 322)
+scale = Vector2(1.6, 1.8111111)
+texture = ExtResource("10_2en44")
+
+[node name="Grass" type="Parallax2D" parent="Layers" unique_id=1843997818]
+
+[node name="Sprite2D" type="Sprite2D" parent="Layers/Grass" unique_id=1744244138]
+position = Vector2(576, 322)
+scale = Vector2(1.6, 1.8111111)
+texture = ExtResource("11_xfuta")
+
+[node name="Campfire" type="Parallax2D" parent="Layers" unique_id=2097458432]
+
+[node name="Sprite2D" type="Sprite2D" parent="Layers/Campfire" unique_id=1874471955]
+position = Vector2(576, 322)
+scale = Vector2(1.6, 1.8111111)
+texture = ExtResource("12_dx0dm")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=895671450]
+position = Vector2(576, 328)
+offset = Vector2(3.765, 0)
+zoom = Vector2(1.1, 1.1)
+script = ExtResource("13_q1o60")
+
+[node name="Textbox" parent="." unique_id=2079843802 instance=ExtResource("14_hnujd")]
+visible = false
+
+[node name="ItemCounter" parent="." unique_id=751797622 instance=ExtResource("16_i3lb4")]
+
+[node name="ColdMeter" parent="." unique_id=957595398 instance=ExtResource("17_sjxtf")]
+
+[node name="Hint" type="CanvasLayer" parent="." unique_id=1198864091]
+visible = false
+
+[node name="Label" type="Label" parent="Hint" unique_id=1579868050]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -368.0
+offset_top = 148.0
+offset_right = 2999.4421
+offset_bottom = 303.81396
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.215, 0.215)
+theme_override_fonts/font = ExtResource("18_mvgab")
+theme_override_font_sizes/font_size = 143
+text = "Press Space repeatedly to cool yoursel down"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Ambient" type="AudioStreamPlayer" parent="." unique_id=991131584]
+stream = ExtResource("17_nkis6")
+autoplay = true
+bus = &"Ambient"
+
+[node name="Flames" type="AudioStreamPlayer" parent="." unique_id=231219285]
+stream = ExtResource("18_1e11b")
+volume_db = -1.836
+bus = &"SFX"
+
+[node name="CoolDown" type="AudioStreamPlayer" parent="." unique_id=995235554]
+stream = ExtResource("21_qd6ls")
+volume_db = 3.88
+bus = &"SFX"
+
+[node name="FireCrackling" type="AudioStreamPlayer" parent="." unique_id=1461008884]
+stream = ExtResource("19_qd6ls")
+volume_db = -20.0
+autoplay = true
+bus = &"SFX"
+
+[connection signal="selected_upgrade_campfire" from="Textbox" to="." method="_on_textbox_selected_upgrade_campfire"]

@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://big6lg7hv4nwi"]
+
+[ext_resource type="Texture2D" uid="uid://vuxyrquh7cct" path="res://assets/parallax_demon_woods_pack/parallax-demon-woods-bg.png" id="1_mqjok"]
+[ext_resource type="Script" uid="uid://0hujq1t1144c" path="res://scenes/ending.gd" id="1_nfmnx"]
+[ext_resource type="PackedScene" uid="uid://bbh0pdt2jo34l" path="res://scenes/ui/textbox.tscn" id="3_2x1jc"]
+[ext_resource type="SpriteFrames" uid="uid://bmqe4ebkqi6mv" path="res://resources/fire_sprite_frames.tres" id="3_nfmnx"]
+[ext_resource type="AudioStream" uid="uid://cv88ciwovdnsl" path="res://resources/ending_ambient.tres" id="5_qa3ag"]
+
+[node name="Ending" type="Node2D" unique_id=1153107779 node_paths=PackedStringArray("textbox", "color_rect")]
+script = ExtResource("1_nfmnx")
+textbox = NodePath("Textbox")
+color_rect = NodePath("ColorRect")
+
+[node name="Background" type="Parallax2D" parent="." unique_id=708685337]
+repeat_size = Vector2(1435, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Background" unique_id=758935019]
+position = Vector2(586.48, 324.00003)
+scale = Vector2(2.9896672, 2.994)
+texture = ExtResource("1_mqjok")
+
+[node name="Fire" type="Parallax2D" parent="." unique_id=482122032]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fire" unique_id=1732437545]
+position = Vector2(544, 56)
+scale = Vector2(64.77344, 52.015625)
+sprite_frames = ExtResource("3_nfmnx")
+autoplay = "default"
+
+[node name="Textbox" parent="." unique_id=2079843802 instance=ExtResource("3_2x1jc")]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=575756467]
+z_index = 5
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0)
+
+[node name="Ambient" type="AudioStreamPlayer" parent="." unique_id=667083879]
+stream = ExtResource("5_qa3ag")
+volume_db = -5.0
+autoplay = true
+bus = &"Ambient"
+
+[connection signal="fade_finished" from="." to="." method="_on_fade_finished"]

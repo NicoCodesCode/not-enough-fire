@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://birjddjbfubwv"]
+
+[ext_resource type="Texture2D" uid="uid://biwqrmi6hgi8j" path="res://assets/parallax_demon_woods_pack/parallax-demon-woods-close-trees.png" id="1_v8kc8"]
+
+[node name="ForestForeground" type="Node2D" unique_id=1311957475]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1046095395]
+scroll_scale = Vector2(0.6, 0.6)
+repeat_size = Vector2(1435, 0)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=277448087]
+modulate = Color(0, 0, 1, 1)
+position = Vector2(576, 320)
+scale = Vector2(2.994, 2.994)
+texture = ExtResource("1_v8kc8")

@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://bbh0pdt2jo34l"]
+
+[ext_resource type="Texture2D" uid="uid://d34mkciftxkkq" path="res://assets/borders/Border.png" id="1_66i0t"]
+[ext_resource type="Script" uid="uid://drjn8s80fgh23" path="res://scenes/ui/textbox.gd" id="1_cjlwn"]
+[ext_resource type="FontFile" uid="uid://dsnixfcm078au" path="res://assets/fonts/beholden-book-font/BeholdenBook-Bold.ttf" id="2_cjlwn"]
+[ext_resource type="LabelSettings" uid="uid://d301eaj7dxumj" path="res://resources/font_settings.tres" id="3_1wp34"]
+[ext_resource type="AudioStream" uid="uid://bfv5uknbb2an" path="res://assets/sfx/text_sfx_perfect.wav" id="5_gc5d4"]
+
+[node name="Textbox" type="CanvasLayer" unique_id=2079843802 node_paths=PackedStringArray("dialogue", "options_container", "yes_button", "no_button", "dialogue_sfx")]
+script = ExtResource("1_cjlwn")
+dialogue = NodePath("NinePatchRect/TextboxContent/Dialogue")
+options_container = NodePath("NinePatchRect/TextboxContent/OptionsContainer")
+yes_button = NodePath("NinePatchRect/TextboxContent/OptionsContainer/YesButton")
+no_button = NodePath("NinePatchRect/TextboxContent/OptionsContainer/NoButton")
+dialogue_sfx = NodePath("Dialogue")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=208202737]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -454.99997
+offset_top = 12.0
+offset_right = -271.0
+offset_bottom = 53.799995
+grow_horizontal = 2
+scale = Vector2(5, 5)
+texture = ExtResource("1_66i0t")
+region_rect = Rect2(256, 64, 64, 64)
+patch_margin_left = 15
+patch_margin_top = 8
+patch_margin_right = 15
+patch_margin_bottom = 8
+
+[node name="TextboxContent" type="VBoxContainer" parent="NinePatchRect" unique_id=1644662281]
+layout_mode = 1
+offset_left = 16.399996
+offset_top = 10.0
+offset_right = 7576.401
+offset_bottom = 1120.0
+scale = Vector2(0.02, 0.02)
+theme_override_constants/separation = 250
+
+[node name="Dialogue" type="Label" parent="NinePatchRect/TextboxContent" unique_id=1584857948]
+custom_minimum_size = Vector2(10, 0)
+layout_mode = 2
+text = "Pick it up?"
+label_settings = ExtResource("3_1wp34")
+autowrap_mode = 2
+
+[node name="OptionsContainer" type="HBoxContainer" parent="NinePatchRect/TextboxContent" unique_id=648606477]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 2800
+
+[node name="YesButton" type="Button" parent="NinePatchRect/TextboxContent/OptionsContainer" unique_id=1543290200]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(0.49411765, 0.49411765, 0.49411765, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_cjlwn")
+theme_override_font_sizes/font_size = 400
+text = "Yessir"
+flat = true
+
+[node name="NoButton" type="Button" parent="NinePatchRect/TextboxContent/OptionsContainer" unique_id=648079279]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(0.49433076, 0.49433076, 0.4943307, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_cjlwn")
+theme_override_font_sizes/font_size = 400
+disabled = true
+text = "Hell nah"
+flat = true
+
+[node name="Dialogue" type="AudioStreamPlayer" parent="." unique_id=2089376787]
+stream = ExtResource("5_gc5d4")
+volume_db = -10.0
+max_polyphony = 3
+bus = &"SFX"

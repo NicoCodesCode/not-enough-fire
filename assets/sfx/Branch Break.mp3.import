@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://u02bp8lcm8wk"
+path="res://.godot/imported/Branch Break.mp3-65d6d7cad7f7068dbc7f30a7e5b8081d.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/Branch Break.mp3"
+dest_files=["res://.godot/imported/Branch Break.mp3-65d6d7cad7f7068dbc7f30a7e5b8081d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

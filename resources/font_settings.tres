@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://d301eaj7dxumj"]
+
+[ext_resource type="FontFile" uid="uid://dsnixfcm078au" path="res://assets/fonts/beholden-book-font/BeholdenBook-Bold.ttf" id="1_8dp6w"]
+
+[resource]
+font = ExtResource("1_8dp6w")
+font_size = 400

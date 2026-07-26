@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://0ed4nch85phc"]
+
+[ext_resource type="Texture2D" uid="uid://cf01syc3oa6lq" path="res://assets/icons/sprite-sheet.png" id="1_an3yr"]
+[ext_resource type="Script" uid="uid://c823p615sfyuk" path="res://scenes/ui/item_counter.gd" id="1_k56g5"]
+[ext_resource type="FontFile" uid="uid://dsnixfcm078au" path="res://assets/fonts/beholden-book-font/BeholdenBook-Bold.ttf" id="2_aj64q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k56g5"]
+atlas = ExtResource("1_an3yr")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xirl7"]
+font = ExtResource("2_aj64q")
+font_size = 32
+
+[node name="ItemCounter" type="CanvasLayer" unique_id=751797622 node_paths=PackedStringArray("label")]
+script = ExtResource("1_k56g5")
+label = NodePath("VBoxContainer/Label")
+
+[node name="VBoxContainer" type="HBoxContainer" parent="." unique_id=1644082105]
+z_index = 5
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -64.0
+offset_right = 90.0
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer" unique_id=1601422303]
+layout_mode = 2
+texture = SubResource("AtlasTexture_k56g5")
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1296926769]
+layout_mode = 2
+text = "x0"
+label_settings = SubResource("LabelSettings_xirl7")

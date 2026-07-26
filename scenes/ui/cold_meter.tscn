@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://df7ms4c8b48t6"]
+
+[ext_resource type="Script" uid="uid://dlg3krns7q2lh" path="res://scenes/ui/cold_meter.gd" id="1_3vqcg"]
+[ext_resource type="FontFile" uid="uid://dsnixfcm078au" path="res://assets/fonts/beholden-book-font/BeholdenBook-Bold.ttf" id="1_4veds"]
+[ext_resource type="Texture2D" uid="uid://ce0ldc5ub318a" path="res://assets/ui/coldness_meter_frames/frame_0.tres" id="1_halgw"]
+[ext_resource type="Texture2D" uid="uid://bk0ji5g3tfkjx" path="res://assets/ui/coldness_meter_frames/frame_4.tres" id="2_4veds"]
+
+[node name="ColdMeter" type="CanvasLayer" unique_id=957595398 node_paths=PackedStringArray("progress_bar")]
+script = ExtResource("1_3vqcg")
+progress_bar = NodePath("VBoxContainer/TextureProgressBar")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1250474708]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -248.0
+offset_top = -88.0
+offset_right = 2.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/separation = -35
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=1020001998]
+layout_mode = 2
+theme_override_constants/margin_right = 18
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer" unique_id=1012593613]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_4veds")
+theme_override_font_sizes/font_size = 34
+text = "Coldness"
+horizontal_alignment = 2
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="VBoxContainer" unique_id=1766681276]
+custom_minimum_size = Vector2(250, 100)
+layout_mode = 2
+nine_patch_stretch = true
+texture_under = ExtResource("1_halgw")
+texture_progress = ExtResource("2_4veds")

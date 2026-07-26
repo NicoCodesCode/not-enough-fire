@@ -1,0 +1,175 @@
+[gd_scene format=3 uid="uid://cryinivi5uc80"]
+
+[ext_resource type="Script" uid="uid://dt1feudj2u3uh" path="res://scenes/menu/how_to_play.gd" id="1_f3yms"]
+[ext_resource type="FontFile" uid="uid://dsnixfcm078au" path="res://assets/fonts/beholden-book-font/BeholdenBook-Bold.ttf" id="2_ye78e"]
+[ext_resource type="Texture2D" uid="uid://eqd8xaqoidjk" path="res://assets/screenshots/camp.png" id="3_f3yms"]
+[ext_resource type="Texture2D" uid="uid://biwqfixhh1qrb" path="res://assets/screenshots/forest.png" id="3_wguod"]
+[ext_resource type="AudioStream" uid="uid://ct5up3pnnt6a4" path="res://assets/ambient/Blackout Hallucination.wav" id="5_p52if"]
+
+[node name="HowToPlay" type="Node2D" unique_id=892860778 node_paths=PackedStringArray("title", "forest_background_color", "forest_instructions", "camp_background_color", "camp_instructions", "skip_button", "next_button", "start_button", "ambient")]
+script = ExtResource("1_f3yms")
+title = NodePath("Title")
+forest_background_color = NodePath("ForestBackgroundColor")
+forest_instructions = NodePath("ForestInstructions")
+camp_background_color = NodePath("CampBackgroundColor")
+camp_instructions = NodePath("CampInstructions")
+skip_button = NodePath("Buttons/HBoxContainer/Skip")
+next_button = NodePath("Buttons/HBoxContainer/BoxContainer/Next")
+start_button = NodePath("Buttons/HBoxContainer/BoxContainer/Start")
+ambient = NodePath("Ambient")
+
+[node name="ForestBackgroundColor" type="CanvasLayer" parent="." unique_id=786068985]
+
+[node name="ColorRect" type="ColorRect" parent="ForestBackgroundColor" unique_id=1500213880]
+top_level = true
+z_index = 100
+offset_right = 1160.0
+offset_bottom = 648.0
+color = Color(0, 0, 0.23529412, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CampBackgroundColor" type="CanvasLayer" parent="." unique_id=813343326]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CampBackgroundColor" unique_id=1091240818]
+top_level = true
+z_index = 100
+offset_right = 1160.0
+offset_bottom = 648.0
+color = Color(0, 0, 0.023529412, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="CanvasLayer" parent="." unique_id=1798578119]
+
+[node name="Label" type="Label" parent="Title" unique_id=2061947563]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -272.0
+offset_top = 24.0
+offset_right = 1840.0
+offset_bottom = 432.0
+grow_horizontal = 2
+scale = Vector2(0.265, 0.265)
+theme_override_fonts/font = ExtResource("2_ye78e")
+theme_override_font_sizes/font_size = 407
+text = "How To Play"
+
+[node name="ForestInstructions" type="CanvasLayer" parent="." unique_id=1379747067]
+
+[node name="ForestScreenshot" type="TextureRect" parent="ForestInstructions" unique_id=1538947499]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.0
+offset_top = -12.0
+offset_right = 864.0
+offset_bottom = 634.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_wguod")
+
+[node name="Label" type="Label" parent="ForestInstructions" unique_id=160286719]
+offset_left = 128.0
+offset_top = 192.0
+offset_right = 6307.311
+offset_bottom = 1407.0
+scale = Vector2(0.145, 0.145)
+theme_override_fonts/font = ExtResource("2_ye78e")
+theme_override_font_sizes/font_size = 170
+text = "At the forest:
+
+    1. Collect branches while you're warm
+    
+    2. If you hear something on your left or right, turn away from it immediately
+    
+    3. Return to the camp by pressing C if you're too cold"
+autowrap_mode = 2
+
+[node name="CampInstructions" type="CanvasLayer" parent="." unique_id=1057912759]
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="CampInstructions" unique_id=401314806]
+offset_left = 360.0
+offset_top = 376.0
+offset_right = 1511.0
+offset_bottom = 1023.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_f3yms")
+
+[node name="Label" type="Label" parent="CampInstructions" unique_id=973205477]
+offset_left = 128.0
+offset_top = 192.0
+offset_right = 6307.311
+offset_bottom = 1407.0
+scale = Vector2(0.145, 0.145)
+theme_override_fonts/font = ExtResource("2_ye78e")
+theme_override_font_sizes/font_size = 170
+text = "At the camp:
+
+    1. Press Space repeatedly to cool yourself down
+    
+    2. If you have 5 branches or more, press Z to upgrade your campfire
+    
+    3. When you're ready, press C to trespass the forest again for more branches"
+autowrap_mode = 2
+
+[node name="Buttons" type="CanvasLayer" parent="." unique_id=1067651429]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Buttons" unique_id=633148839]
+offset_left = 944.0
+offset_top = 584.0
+offset_right = 2275.0
+offset_bottom = 893.0
+scale = Vector2(0.14, 0.14)
+theme_override_constants/separation = 145
+
+[node name="Skip" type="Button" parent="Buttons/HBoxContainer" unique_id=869587669]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_pressed_color = Color(0.49019608, 0.0627451, 0.007843138, 1)
+theme_override_colors/font_hover_color = Color(0.9137255, 0.1764706, 0, 1)
+theme_override_fonts/font = ExtResource("2_ye78e")
+theme_override_font_sizes/font_size = 300
+text = "Skip"
+flat = true
+alignment = 0
+
+[node name="BoxContainer" type="BoxContainer" parent="Buttons/HBoxContainer" unique_id=593488604]
+layout_mode = 2
+theme_override_constants/separation = -887
+
+[node name="Next" type="Button" parent="Buttons/HBoxContainer/BoxContainer" unique_id=344164113]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_pressed_color = Color(0.49019608, 0.0627451, 0.007843138, 1)
+theme_override_colors/font_hover_color = Color(0.9137255, 0.1764706, 0, 1)
+theme_override_fonts/font = ExtResource("2_ye78e")
+theme_override_font_sizes/font_size = 300
+text = "Next"
+flat = true
+alignment = 0
+
+[node name="Start" type="Button" parent="Buttons/HBoxContainer/BoxContainer" unique_id=2101906580]
+visible = false
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_pressed_color = Color(0.49019608, 0.0627451, 0.007843138, 1)
+theme_override_colors/font_hover_color = Color(0.9137255, 0.1764706, 0, 1)
+theme_override_fonts/font = ExtResource("2_ye78e")
+theme_override_font_sizes/font_size = 300
+disabled = true
+text = "Start"
+flat = true
+alignment = 0
+
+[node name="Ambient" type="AudioStreamPlayer" parent="." unique_id=350815593]
+stream = ExtResource("5_p52if")
+autoplay = true
+
+[connection signal="pressed" from="Buttons/HBoxContainer/Skip" to="." method="_on_skip_pressed"]
+[connection signal="pressed" from="Buttons/HBoxContainer/BoxContainer/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Buttons/HBoxContainer/BoxContainer/Start" to="." method="_on_start_pressed"]
